@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navLinks = [
@@ -111,18 +112,15 @@ export default function Nav() {
           }}
         >
           {/* Logo */}
-          <Link
-            href="/"
-            style={{
-              fontFamily: "var(--font-dm-mono), monospace",
-              color: "#EE3E30",
-              fontSize: 20,
-              fontWeight: 500,
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-            }}
-          >
-            ViUnlimited
+          <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+            <Image
+              src="/logo.jpg"
+              alt="ViUnlimited"
+              width={120}
+              height={40}
+              style={{ objectFit: "contain", objectPosition: "left", height: 40, width: "auto" }}
+              priority
+            />
           </Link>
 
           {/* Desktop links */}
@@ -290,9 +288,7 @@ export default function Nav() {
             }}
           >
             <div style={{ padding: "0 24px 24px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{ fontFamily: "var(--font-dm-mono), monospace", color: "#EE3E30", fontSize: 18, fontWeight: 500 }}>
-                ViUnlimited
-              </span>
+              <Image src="/logo.jpg" alt="ViUnlimited" width={100} height={34} style={{ objectFit: "contain", objectPosition: "left", height: 34, width: "auto" }} />
               <button
                 onClick={() => setMobileOpen(false)}
                 style={{ background: "none", border: "none", color: "#F5F3EE", cursor: "pointer" }}
